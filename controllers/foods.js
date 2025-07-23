@@ -8,3 +8,8 @@ const User = require('../models/user.js');
 // router logic will go here - will be built later on in the lab
 
 module.exports = router;
+
+router.get('/', (req, res) => {
+  res.render('foods/index.ejs');
+});
+
