@@ -48,6 +48,13 @@ app.get("/", async (req, res) => {
     });
 });
 
+//     if (req.session.user) {
+//       res.redirect(`/users/${req.session.user._id}/foods`)
+//     } else {
+//       res.render('index.ejs')
+//     }
+// });
+
 // server.js
 
 app.use('/auth', authController);

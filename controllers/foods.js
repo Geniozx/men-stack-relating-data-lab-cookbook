@@ -4,12 +4,25 @@ const express = require('express');
 const router = express.Router();
 
 const User = require('../models/user.js');
+const { render } = require('ejs');
 
 // router logic will go here - will be built later on in the lab
 
 module.exports = router;
 
-router.get('/', (req, res) => {
-  res.render('foods/index.ejs');
+router.get('/', async (req, res) => {
+  try {
+    const currentUser = await User.findById(req.session.user._id);
+    res.render('foods/index.ejs', {
+      foods: currentUser.pantry,
+    });
+  } catch (error) {
+    console.log(error);
+    res.redirect('/');
+  }
+});
+
+router.get('/new', async (req, res) => {
+  res.render('foods/new.ejs');
 });
 
