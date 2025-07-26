@@ -8,6 +8,18 @@ const foodSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  category: {
+    type: String,
+    enum: ['Fruit', 'Vegetable', 'Dairy', 'Spice', 'Meats', 'Fish', 'Eggs', 'Grains', 'Legumes', 'Milk', 'Fats', 'Oils', 'Sugar or Sweetener', 'Herbs', 'Sauces', 'Dressing', 'Leavening Agents', 'Thickeners, Stabilizers & Binders'],
+    required: true,
+  },
+  notes: {
+    type: String,
+  },
+  expiration: {
+    type: String,
+    required: true,
+  },
 });
 
 

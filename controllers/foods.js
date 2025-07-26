@@ -8,7 +8,7 @@ const { render } = require('ejs');
 
 // router logic will go here - will be built later on in the lab
 
-module.exports = router;
+
 
 router.get('/', async (req, res) => {
   try {
@@ -50,15 +50,43 @@ router.delete('/:foodId', async (req, res) => {
   }
 });
 
-router.get('/:foodId/edit', async (req, res) => {
+router.get('/:foodId', async (req, res) => {
   try {
     const currentUser = await User.findById(req.session.user._id);
     const pantry = currentUser.pantry.id(req.params.foodId);
-    res.render('foods/edit.ejs', {
-      pantry : pantry,
+    res.render('foods/show.ejs', {
+      foods: pantry,
     });
   } catch (error) {
     console.log(error);
     res.redirect('/');
   }
-})
+});
+
+router.get('/:foodId/edit', async (req, res) => {
+  try {
+    const currentUser = await User.findById(req.session.user._id);
+    const pantry = currentUser.pantry.id(req.params.foodId);
+    res.render('foods/edit.ejs', {
+      foods : pantry,
+    });
+  } catch (error) {
+    console.log(error);
+    res.redirect('/');
+  }
+});
+
+router.put('/:foodId', async (req, res) => {
+  try {
+    const currentUser = await User.findById(req.session.user._id);
+    const pantry = currentUser.pantry.id(req.params.foodId);
+    pantry.set(req.body);
+    await currentUser.save();
+    res.redirect(`/users/${currentUser._id}/foods/${req.params.foodId}`);
+  } catch (error) {
+    console.log(error);
+    res.redirect('/');
+  }
+});
+
+module.exports = router;
