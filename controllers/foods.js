@@ -1,13 +1,7 @@
-// controllers/foods.js
-
 const express = require('express');
 const router = express.Router();
-
 const User = require('../models/user.js');
 const { render } = require('ejs');
-
-// router logic will go here - will be built later on in the lab
-
 
 
 router.get('/', async (req, res) => {
@@ -68,7 +62,7 @@ router.get('/:foodId/edit', async (req, res) => {
     const currentUser = await User.findById(req.session.user._id);
     const pantry = currentUser.pantry.id(req.params.foodId);
     res.render('foods/edit.ejs', {
-      foods : pantry,
+      foods: pantry,
     });
   } catch (error) {
     console.log(error);
