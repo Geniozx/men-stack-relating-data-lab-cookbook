@@ -4,12 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/stylesheet/style.css"></link>
+    <link rel="stylesheet" href="/stylesheets/partials.css" />
     <title>My Pantry</title>
   </head>
   <body>
     <%- include('../partials/_navbar.ejs') %>
+    <div class="all-apps-body">
+  <div class="all-apps-header">
     <h1>Welcome to my Pantry</h1>
-    <a href="/users/<%=user._id%>/foods/new">Add a New Item</a>
+    <a class="add-item-link" href="/users/<%=user._id%>/foods/new">Add a New Item</a>
+    </div>
     <ul>
       <% foods.forEach((foods)=>{ %>
       <li><a href="/users/<%= user._id %>/foods/<%= foods._id %>">
@@ -17,6 +21,7 @@
     </a></li>
       <% }) %>
     </ul>
+    </div>
     <form
       action="/users/<%= user._id %>/foods/<%= foods._id %>?_method=DELETE"
       method="POST"

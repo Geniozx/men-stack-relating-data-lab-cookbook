@@ -10,14 +10,14 @@
   <%- include('./partials/_navbar.ejs') %>
   <div class="index-container">
     <div class="text-container">
-  <h1 class="main-header">Welcome to CookBook</h1>
+  <h1 class="main-header">Welcome to Pantry</h1>
     <% if (user) { %>
-    <h1>Let's get started with your CookBook, <%= user.username %>!</h1>
+    <h1>Let's get started with your own Pantry, <%= user.username %>!</h1>
     <p class="subheader">
       <a href="/auth/sign-out">Sign out</a>
     </p></div>
       <% } else { %>
-    <h1>Make your own CookBook, guest?</h1>
+    <p class="subheader">Make your own Pantry, guest?</p>
       <% } %>
 
   </body>
