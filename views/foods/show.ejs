@@ -3,14 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/stylesheet/style.css"></link>
-    <link rel="stylesheet" href="/stylesheets/partials.css" />
+    <link rel="stylesheet" href="/stylesheets/show.css" />
 
     <title><%= foods.name %></title>
 </head>
 <body>
     <%- include('../partials/_navbar.ejs') %>
+  <div class="show-body">
+    <div class="show-header">
     <h1><%= foods.name %></h1>
+    </div>
     <% if (foods.notes) { %>
     <p>Notes <%= foods.notes %></p> <% } %>
     <a href="/users/<%= user._id %>/foods/<%= foods._id %>/edit">
@@ -22,5 +24,6 @@
     >
       <button type="submit">Delete this Item</button>
     </form>
+  </div>
 </body>
 </html>

@@ -9,6 +9,7 @@
 </head>
 <body>
   <%- include('../partials/_navbar.ejs') %>
+  <div class="edit-body">
   <h1>Edit <%= foods.name %></h1>
   <form action="/users/<%=user._id%>/foods" method="POST">
         <label for="name">Name</label>
@@ -44,5 +45,6 @@
 
     <button type="submit">Update Item</button>
   </form>
+</div>
 </body>
 </html>

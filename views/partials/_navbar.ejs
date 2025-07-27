@@ -7,9 +7,10 @@
       <h1 id="nav-header">Pantry</h1>
       
       <div class="nav-links">
-        <a href="/">Home</a>
-        <a href="/users/<%=user._id%>/foods">View my Pantry</a>
-        <a href="/auth/sign-out">Sign Out</a>
+        <a class="authlink" href="/">Home</a>
+        <a class="authlink" href="/users/<%=user._id%>/foods">View my Pantry</a>
+        <a class="authlink" href="/users/index">Explore Our Community</a>
+        <a class="authlink" href="/auth/sign-out">Sign Out</a>
       </div>
     </div>
     <% } else { %>
@@ -17,9 +18,9 @@
         <h1 id="nav-header">Pantry</h1>
 
         <div class="nav-links">
-          <a href="/">Home</a>
-          <a href="/auth/sign-in">Sign In</a>
-          <a href="/auth/sign-up">Sign Up</a>
+          <a class="authlink" href="/">Home</a>
+          <a class="authlink" href="/auth/sign-in">Sign In</a>
+          <a class="authlink" href="/auth/sign-up">Sign Up</a>
         </div>
       </div>
       <% } %>

@@ -16,6 +16,7 @@ const passUserToView = require('./middleware/pass-user-to-view.js');
 
 
 const foodsController = require('./controllers/foods.js');
+const userController = require('./controllers/users.js');
 
 // Set the port from environment variable or default to 3000
 const port = process.env.PORT ? process.env.PORT : "3000";
@@ -61,6 +62,7 @@ app.get('/users', async (req, res) => {
 app.use('/auth', authController);
 app.use(isSignedIn);
 app.use('/users/:userId/foods', foodsController);
+app.use('/users', userController);
 
 
 app.listen(port, () => {
