@@ -1,9 +1,6 @@
 const mongoose = require("mongoose");
 
-// user.js
-
 const foodSchema = new mongoose.Schema({
-  // YOU DO: Define properties of food schema
   name: {
     type: String,
     required: true,

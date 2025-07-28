@@ -7,12 +7,29 @@
     <title>Pantry Index</title>
   </head>
   <body>
+    <body class="index-body">
     <%- include('../partials/_navbar.ejs') %>
-    <h1>All Items</h1>
+    <div class="index-container">
+    <div class="text-container">
+    <h1>Other Pantries</h1>
+    <p>Let's see what other Chefs are stocking!</p>
     <ul>
-    <% foods.forEach(foods => { %>
-      <li><%= foods.name %></li>
+    <% users.forEach(user => { %>
+      <li>
+        <strong><%= user.username %></strong>
+        <% if (user.foods && user.foods.length) { %>
+          <ul>
+            <% user.foods.forEach(food => { %>
+              <li><%= food.name %></li>
+            <% }); %>
+          </ul>
+        <% } else { %>
+          <span>No foods listed.</span>
+        <% } %>
+      </li>
     <% }); %>
   </ul>
   </body>
 </html>
+
+
