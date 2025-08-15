@@ -11,10 +11,10 @@ router.get("/sign-up", (req, res) => {
 router.post("/sign-up", async (req, res) => {
   const userInDatabase = await User.findOne({ username: req.body.username });
   if (userInDatabase) {
-  return res.send("Username already taken.");
+  return res.redirect("Username already taken.");
 }
 if (req.body.password !== req.body.confirmPassword){
-    return res.send('Password and Confirm password do not match!')
+    return res.redirect('Password and Confirm password do not match!')
 }
   const hashedPassword = bcrypt.hashSync(req.body.password, 10);
 req.body.password = hashedPassword;

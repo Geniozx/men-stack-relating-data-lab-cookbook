@@ -1,7 +1,6 @@
 <link rel="stylesheet" href="/stylesheet/partials.css"/>
 
 <nav>
-  
   <% if(user) { %>
     <div class="navbar">
       <h1 id="nav-header">Pantry</h1>
@@ -9,7 +8,7 @@
       <div class="nav-links">
         <a class="authlink" href="/">Home</a>
         <a class="authlink" href="/users/<%=user._id%>/foods">View my Pantry</a>
-        <a class="authlink" href="/users">Explore Our Community</a>
+        <a class="authlink" href="/users">Explore Other Pantries</a>
         <a class="authlink" href="/auth/sign-out">Sign Out</a>
       </div>
     </div>

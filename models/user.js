@@ -12,10 +12,6 @@ const foodSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  expiresAt: {
-    type: Date,
-    required: true,
-  },
   category: {
     type: String,
     enum: ['Fruit', 'Vegetable', 'Dairy', 'Spice', 'Meats', 'Fish', 'Eggs', 'Grains', 'Legumes', 'Milk', 'Fats', 'Oils', 'Sugar or Sweetener', 'Herbs', 'Sauces', 'Dressing', 'Leavening Agents', 'Thickeners, Stabilizers & Binders'],

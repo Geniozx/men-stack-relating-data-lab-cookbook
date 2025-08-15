@@ -13,35 +13,35 @@
   <h1>Edit <%= foods.name %></h1>
   <form action="/users/<%=user._id%>/foods" method="POST">
         <label for="name">Name</label>
-        <input type="text" name="name" id="name" />
+        <input type="text" name="name" id="name" value="<%= foods.name %>" />
 
         <label for="category">Category</label>
         <select id="category" name="category">
-          <option value="Fruit">Fruit</option>
-          <option value="Vegetable">Vegetable</option>
-          <option value="Dairy">Dairy</option>
-          <option value="Spice">Spice</option>
-          <option value="Meats">Meats</option>
-          <option value="Fish">Fish</option>
-          <option value="Eggs">Eggs</option>
-          <option value="Grains">Grains</option>
-          <option value="Legumes">Legumes</legend></option>
-          <option value="Milk">Milk</option>
-          <option value="Fats">Fish</option>
-          <option value="Oils ">Oils</option>
-          <option value="Sugar or Sweetener">Sugar or Sweetener</option>
-          <option value="Herbs">Herbs</option>
-          <option value="Sauces">Sauces</option>
-          <option value="Dressing ">Dressing</option>
-          <option value="Leavening Agents">Leavening Agents</option>
-          <option value= "Thickeners,Stabilizers & Binders">Thickeners, Stabilizers & Binders</option>
+          <option value="Fruit" <%= foods.category === "Fruit" ? "selected" : "" %>>Fruit</option>
+          <option value="Vegetable" <%= foods.category === "Vegetable" ? "selected" : "" %>>Vegetable</option>
+          <option value="Dairy" <%= foods.category === "Dairy" ? "selected" : "" %>>Dairy</option>
+          <option value="Spice" <%= foods.category === "Spice" ? "selected" : "" %>>Spice</option>
+          <option value="Meats" <%= foods.category === "Meats" ? "selected" : "" %>>Meats</option>
+          <option value="Fish" <%= foods.category === "Fish" ? "selected" : "" %>>Fish</option>
+          <option value="Eggs" <%= foods.category === "Eggs" ? "selected" : "" %>>Eggs</option>
+          <option value="Grains" <%= foods.category === "Grains" ? "selected" : "" %>>Grains</option>
+          <option value="Legumes" <%= foods.category === "Legumes" ? "selected" : "" %>>Legumes</option>
+          <option value="Milk" <%= foods.category === "Milk" ? "selected" : "" %>>Milk</option>
+          <option value="Fats" <%= foods.category === "Fats" ? "selected" : "" %>>Fats</option>
+          <option value="Oils " <%= foods.category === "Oils " ? "selected" : "" %>>Oils</option>
+          <option value="Sugar or Sweetener" <%= foods.category === "Sugar or Sweetener" ? "selected" : "" %>>Sugar or Sweetener</option>
+          <option value="Herbs" <%= foods.category === "Herbs" ? "selected" : "" %>>Herbs</option>
+          <option value="Sauces" <%= foods.category === "Sauces" ? "selected" : "" %>>Sauces</option>
+          <option value="Dressing " <%= foods.category === "Dressing " ? "selected" : "" %>>Dressing</option>
+          <option value="Leavening Agents" <%= foods.category === "Leavening Agents" ? "selected" : "" %>>Leavening Agents</option>
+          <option value= "Thickeners,Stabilizers & Binders" <%= foods.category === "Thickeners,Stabilizers & Binders" ? "selected" : "" %>>Thickeners, Stabilizers & Binders</option>
           </select>
 
-        <date for="notes">Notes</label>
-        <textarea name="notes" id="notes"></textarea>
+        <label for="notes">Notes</label>
+        <textarea name="notes" id="notes"><%= foods.notes %></textarea>
 
         <label for="expiration">Expiration</label>
-        <input type="date" name="expiration" id="" value="" min="yyyy-MM-dd(today)" max="yyyy-MM-dd"/>
+        <input type="date" name="expiration" id="expiration" value="<%= foods.expiration %>" min="yyyy-MM-dd(today)" max="yyyy-MM-dd"/>
 
     <button type="submit">Update Item</button>
   </form>
